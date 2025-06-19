@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "429454724839",
+    "project_id": "fourinrow-716f9",
+    "storage_bucket": "fourinrow-716f9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:429454724839:android:c9b5d0cdeec00349c69c42",
+        "android_client_info": {
+          "package_name": "ud.example.four_in_row"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXGbV1ywA6C2vZ5d_-Y3BZz0HnkVvHUQk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
