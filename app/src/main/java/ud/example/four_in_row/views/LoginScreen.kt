@@ -18,6 +18,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import ud.example.four_in_row.Enum.EnumNavigation
+import androidx.core.content.edit
 
 @Preview
 @Composable
@@ -37,6 +38,8 @@ fun LoginScreen(navController: NavController) {
     var isLoading by remember { mutableStateOf(false) }
     val auth = FirebaseAuth.getInstance()
     val context = LocalContext.current
+    val prefs = context.getSharedPreferences("user_prefs", 0)
+
     Scaffold{ innerPadding ->
         Column(
             modifier = Modifier
@@ -80,6 +83,7 @@ fun LoginScreen(navController: NavController) {
                             if (task.isSuccessful) {
                                 //Almaceno el id de la persona logeada e ingresada
                                 val userId = task.result?.user?.uid ?: ""
+                                prefs.edit { putString("user_id", userId) }
                                 // Mostrar Toast usando contexto
                                 Toast.makeText(context, "¡Login exitoso!", Toast.LENGTH_SHORT).show()
                                 navController.navigate(EnumNavigation.HOME.toString())

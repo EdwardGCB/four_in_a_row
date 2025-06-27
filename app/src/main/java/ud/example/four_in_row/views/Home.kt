@@ -205,9 +205,9 @@ fun HomeScreen(navController: NavController, viewModel: GameBoardViewModel = vie
                                         val player = Player(
                                             idPlayer = user.uid,
                                             correo = user.email ?: "",
-                                            1,
                                             Operaciones().generateRandomColor(),
-                                            1
+                                            0,
+                                            isCurrentTurn = true
                                         )
                                         viewModel.joinBoard(joinCode, player)
                                         navController.navigate("${EnumNavigation.PLAY}/${joinCode}")
@@ -300,27 +300,6 @@ fun PastGameItem(game: PastGame) {
     }
 }
 
-@Composable
-fun CardButton(title: String, onClick: () -> Unit) {
-    Card(
-        modifier = Modifier
-            .clickable { onClick() },
-        shape = RoundedCornerShape(16.dp),
-        elevation = CardDefaults.cardElevation(8.dp)
-    ) {
-        Column(
-            modifier = Modifier.padding(5.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Spacer(Modifier.height(5.dp))
-            Text(
-                title,
-                fontWeight = FontWeight.ExtraBold
-            )
-            Spacer(Modifier.height(5.dp))
-        }
-    }
-}
 
 fun copyToClipboard(context: Context, text: String) {
     val clipboardManager = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
