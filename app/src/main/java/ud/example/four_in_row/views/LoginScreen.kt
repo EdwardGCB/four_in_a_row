@@ -8,11 +8,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.google.firebase.auth.FirebaseAuth
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -48,8 +50,25 @@ fun LoginScreen(navController: NavController) {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text("Login to Snake and Ladders", style = MaterialTheme.typography.bodyLarge)
-
+            Row {
+                Text(
+                    "Four",
+                    fontWeight = FontWeight.ExtraBold,
+                    fontSize = 24.sp
+                )
+                Spacer(Modifier.width(5.dp))
+                Text(
+                    "In",
+                    fontWeight = FontWeight.ExtraBold,
+                    fontSize = 19.sp
+                )
+                Spacer(Modifier.width(5.dp))
+                Text(
+                    "Row",
+                    fontWeight = FontWeight.ExtraBold,
+                    fontSize = 24.sp
+                )
+            }
             Spacer(modifier = Modifier.height(32.dp))
 
             // Email TextField

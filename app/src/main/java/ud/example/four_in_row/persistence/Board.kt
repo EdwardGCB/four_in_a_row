@@ -5,7 +5,7 @@ data class Board(
     val rows: Int = 6,  // Tamaño estándar para 4 en raya: 6 filas x 7 columnas
     val columns: Int = 7,
     val players: List<Player> = emptyList(),
-    val grid: List<List<Casilla>> = emptyList(), // Matriz para las fichas
+    val grid: List<Casilla> = emptyList(),
     val state: Boolean = false, // Indica si el juego ha comenzado
     val currentPlayerIndex: Int = 1, // Índice del jugador actual
     val gameStatus: String = "waiting", // waiting, playing, finished
